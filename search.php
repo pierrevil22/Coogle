@@ -22,6 +22,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -43,7 +44,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 					<form action="search.php" method="GET">
 
 						<div class="searchBarContainer">
-
+							<input type="hidden" name="type" value="<?php echo $type; ?>">
 							<input class="searchBox" type="text" name="term" value="<?php echo $term; ?>">
 							<button class="searchButton">
 								<img src="assets/images/icons/search.png">
@@ -183,6 +184,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 
 	</div>
-
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
