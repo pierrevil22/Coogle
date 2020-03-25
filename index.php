@@ -20,7 +20,7 @@
         <div class="mainSection">
 
             <div class="logoContainer">
-                <img src="assets/images/coogleLogo.png">
+                <img src="assets/images/coogleLogo.png" titile="Logo of our site" alt="Site logo">
             </div>
 
         
