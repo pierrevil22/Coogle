@@ -1,46 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Welcome to Coogle</title>
+	<title>Welcome to Coogle</title>
 
-    <meta name="description" content="Search the web for sites and images.">
-    <meta name="keywords" content="Search engine, coogle, websites">
-    <meta name="author" content="Carden Pierre-Vil">
-    <meta name="viewport" content="width=device-width, inital-scale.0">
+	<meta name="description" content="Search the web for sites and images.">
+	<meta name="keywords" content="Search engine, doodle, websites">
+	<meta name="author" content="Reece Kenney">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 <body>
-    
-   
-   
-    <div class="wrapper indexPage">
-   
-   
-        <div class="mainSection">
 
-            <div class="logoContainer">
-                <img src="assets/images/coogleLogo.png" titile="Logo of our site" alt="Site logo">
-            </div>
+	<div class="wrapper indexPage">
+	
 
-        
-            <div class="searchContainer">
+		<div class="mainSection">
 
-                <form action="search.php" method="GET">
-                
-                    <input class="searchBox" type="text" name="term">
-                    <input class="searchButton" type="submit" name="Search">
-            
-            
-                </form>
-        
-            </div>
+			<div class="logoContainer">
+				<img src="assets/images/coogleLogo.png" title="Logo of our site" alt="Site logo">
+			</div>
 
 
-        </div>
+			<div class="searchContainer">
+
+				<form action="search.php" method="GET">
+
+					<input class="searchBox" type="text" name="term" autocomplete="off">
+					<input class="searchButton" type="submit" value="Search">
 
 
-    </div>
+				</form>
+
+			</div>
+
+
+		</div>
+
+
+	</div>
 
 </body>
 </html>

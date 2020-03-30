@@ -1,6 +1,7 @@
 <?php
 include("config.php");
 include("classes/SiteResultsProvider.php");
+include("classes/ImageResultsProvider.php");
 
 if(isset($_GET["term"])) {
 	$term = $_GET["term"];
@@ -18,8 +19,9 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to Doodle</title>
+	<title>Welcome to Coogle</title>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -35,7 +37,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 				<div class="logoContainer">
 					<a href="index.php">
-						<img src="assets/images/doodleLogo.png">
+						<img src="assets/images/coogleLogo.png">
 					</a>
 				</div>
 
@@ -45,7 +47,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 						<div class="searchBarContainer">
 							<input type="hidden" name="type" value="<?php echo $type; ?>">
-							<input class="searchBox" type="text" name="term" value="<?php echo $term; ?>">
+							<input class="searchBox" type="text" name="term" value="<?php echo $term; ?>" autocomplete="off">
 							<button class="searchButton">
 								<img src="assets/images/icons/search.png">
 							</button>
@@ -92,8 +94,14 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 		<div class="mainResultsSection">
 
 			<?php
-			$resultsProvider = new SiteResultsProvider($con);
-			$pageSize = 20;
+			if($type == "sites") {
+				$resultsProvider = new SiteResultsProvider($con);
+				$pageSize = 20;
+			}
+			else {
+				$resultsProvider = new ImageResultsProvider($con);
+				$pageSize = 30;
+			}
 
 			$numResults = $resultsProvider->getNumResults($term);
 
@@ -165,7 +173,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 				?>
 
 				<div class="pageNumberContainer">
-					<img src="assets/images/pageEnd.png">
+					<img src="assets/images/pageEnd1.png">
 				</div>
 
 
@@ -184,6 +192,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>

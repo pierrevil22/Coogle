@@ -47,7 +47,7 @@ function insertImage($url, $src, $alt, $title) {
 
 function createLink($src, $url) {
 
-	$scheme = parse_url($url)["scheme"];
+	$scheme = parse_url($url)["scheme"]; 
 	$host = parse_url($url)["host"]; 
 	
 	if(substr($src, 0, 2) == "//") {
@@ -172,7 +172,6 @@ function followLinks($url) {
 		}
 
 	}
-
 	array_shift($crawling);
 
 	foreach($crawling as $site) {
@@ -181,6 +180,6 @@ function followLinks($url) {
 
 }
 
-$startUrl = "http://www.apple.com";
+$startUrl = "http://www.reecekenney.com";
 followLinks($startUrl);
 ?>
