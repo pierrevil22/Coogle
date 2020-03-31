@@ -9,5 +9,5 @@ try {
 catch(PDOExeption $e) {
 	echo "Connection failed: " . $e->getMessage();
 }
-
+?>
 
