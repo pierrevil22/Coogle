@@ -1,15 +1,14 @@
 <?php
 
-ob_start();
 
-try {
+}
 
-    $con = new PDO("mysql:dbname=coogle;host=localhost", "root", "");
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-}
-catch(PDOExeption $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+//Get Heroku ClearDB connection information
+$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server   = $cleardb_url["us-cdbr-iron-east-01.cleardb.net"];
+$cleardb_username = $cleardb_url["b32bdfcf89ec70"];
+$cleardb_password = $cleardb_url["9edd9180"];
+$cleardb_db       = substr($cleardb_url["https://git.heroku.com/coogle.git"],1);
 
 
 
