@@ -1,15 +1,4 @@
 <?php
-ob_start();
-
-try {
-
-    $con = new PDO("mysql:dbname=coogle;host=localhost", "root", "");
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-}
-catch(PDOExeption $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
 
 //Get Heroku ClearDB connection information
 $cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
